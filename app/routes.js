@@ -11,7 +11,7 @@ module.exports = function(app, passport, db) {
     app.get('/profile', isLoggedIn, function(req, res) {
         db.collection('messages').find().toArray((err, result) => {
           if (err) return console.log(err)
-            console.log
+            console.log(result)
           res.render('profile.ejs', {
             user : req.user,
             messages: result
